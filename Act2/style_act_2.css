@@ -1,0 +1,9 @@
+body{
+    border-left: 45px solid rgb(255, 166, 0);
+    border-right: 45px solid rgb(255, 166, 0);
+    height: auto;
+}
+.btn:hover{
+    color: black;
+    background-color: orange;
+}

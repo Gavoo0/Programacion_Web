@@ -1,0 +1,21 @@
+body{
+    border-left: 45px solid orange;
+    border-right: 45px solid orange;
+  }
+  .btn:hover{
+    color: black;
+    background-color: orange;
+}
+    h1{
+        text-align: center;
+    }
+    .container{
+      margin: 0;
+      max-width: 100%;
+    }
+    .list-group-item{
+      display: flex;
+    }
+    .derecha{
+      float: right;
+    }
