@@ -6,10 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <style>
-      body{
-        border-left: 45px solid orange;
-        border-right: 45px solid orange;
-      }
       .btn:hover{
         color: black;
         background-color: orange;
@@ -20,11 +16,19 @@
         .container{
           margin: 0;
           max-width: 100%;
+          border-left: 45px solid orange;
+          border-right: 45px solid orange;
+        }
+        .list-group-item{
+          display: flex;
+        }
+        .derecha{
+          float: right;
         }
     </style>
 </head>
 <body>
-  <div class="container" style="margin: 0px;">
+  <div class="container" style="margin: 0px;" style="max-width: 100%;">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: beige;">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,14 +65,24 @@
           <div class="col-md-6">
             <div class="card-body">
               <h2 class="card-title">Bio</h2>
-              <p class="card-text">Nombre</p>
-              <p class="card-text" style="float: right;">Golden Nuss</p>
+              <ul class="list-group">
+                <li class="list-group-item "><div class="col-12"><div style="float: left;">Nombre</div><div style="float: right;">Golden Nuss</div></div></li>
+                <li class="list-group-item"><div class="col-12"><div style="float: left;">Edad</div><div style="float: right;">1,5 años</div></div></li>
+                <li class="list-group-item"><div class="col-12"><div style="float: left;">Raza</div><div style="float: right;">Mestizo</div></div></li>
+                <li class="list-group-item"><div class="col-12"><div style="float: left;">Sexo</div><div style="float: right;">Macho</div></div></li>
+                <li class="list-group-item"><div class="col-12"><div style="float: left;">Tamaño</div><div style="float: right;">M</div></div></li>
+              </ul>
             </div>
             <br>
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h2 class="card-title">Más Información</h5>
+                <ul class="list-group">
+                  <li class="list-group-item "><div class="col-12"><div style="float: left;">Se adapta a depto</div><div style="float: right;">Si</div></div></li>
+                  <li class="list-group-item"><div class="col-12"><div style="float: left;">Edad</div><div style="float: right;">1,5 años</div></div></li>
+                  <li class="list-group-item"><div class="col-12"><div style="float: left;">Raza</div><div style="float: right;">Mestizo</div></div></li>
+                  <li class="list-group-item"><div class="col-12"><div style="float: left;">Sexo</div><div style="float: right;">Macho</div></div></li>
+                  <li class="list-group-item"><div class="col-12"><div style="float: left;">Tamaño</div><div style="float: right;">M</div></div></li>
+                </ul>
               </div>
           </div>
         </div>
