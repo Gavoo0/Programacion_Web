@@ -1,0 +1,19 @@
+.container-xl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50% !important;
+    max-width: none !important; /* Asegura que no hay un máximo de ancho definido */
+    min-width: auto !important; /* Asegura que no hay un mínimo de ancho definido */
+}
+
+/* Estilos adicionales para el formulario */
+form {
+    width: 300px; /* Ancho del formulario */
+}
+
+/* Estilos adicionales para el botón */
+.btn-primary {
+    width: 100%;
+}
