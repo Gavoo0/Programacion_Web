@@ -4,15 +4,15 @@
 }
 .btn{
     color: white;
-    margin: 10px;
+    margin: 5px;
 }
 .logo{
-    height: 10%;
-    width: 5%;
+    height: 9%;
+    width: 4%;
 }
-@media only screen  and (min-device-width:200px) and (max-device-width:1000px){
+@media only screen  and (min-device-width:200px) and (max-device-width:1200px){
     .logo{
-        height: 20%;
+        height: 15%;
         width: 10%;
     }
 }
@@ -23,9 +23,12 @@
 }
 
 body{
-    background-color: blanchedalmond;
+    background-color: bisque;
 }
 
 .bg-dark{
     background-color: #1b1c1c !important;
+}
+a{
+    color: white !important;
 }
