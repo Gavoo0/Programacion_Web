@@ -36,6 +36,7 @@
             </ul>
             </div>
         </nav>
+        <br>
         <div class="container">
             <form>
                 <div class="form-group">
@@ -43,6 +44,9 @@
                   <input type="text" class="form-control" id="itCorreo" placeholder="name@example.com">
                   <div id="mensajeCorreo">
                     Ingrese un correo
+                  </div>
+                  <div id="mensajeCorreo2">
+                    Ingrese un correo valido
                   </div>
                 </div>
                 <div class="form-group ">
@@ -66,8 +70,26 @@
                     Ingrese un correo
                   </div>
                 </div>
-                <button class="btn btn-primary" id="enviar">ENVIAR</button>
+                <button type="button" class="btn btn-primary" id="enviar" data-toggle="modal" data-target="#exampleModal">ENVIAR</button>
               </form>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enviado con exito</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Su mensaje ha sido enviado con exito.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div></div>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -75,17 +97,28 @@
         <script>
           $(document).ready(function(){
             $("#enviar").click(function(){
+              var valcor= true;
               var correo=$("#itCorreo").val();
               var nombre=$("#itNombre").val();
               var apellido=$("#itApellido").val();
               var asunto=$("#Asunto").val();
+              var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if(!emailRegex.test(correo)){
+                  $("#itCorreo").css("border-color","red");
+                  $("#mensajeCorreo2").fadeIn();
+                  valcor=false;
+                  return false;
+                  event.preventDefault(); // Evita que se envíe el formulario
+              }
               if(correo==""){
                 $("#itCorreo").css("border-color","red");
                 $("#mensajeCorreo").fadeIn();
                 return false;
               }else{
-                $("#itCorreo").css("border-color","#ced4da");
-                $("#mensajeCorreo").fadeOut();
+                if(valcor){
+                  $("#itCorreo").css("border-color","#ced4da");
+                  $("#mensajeCorreo").fadeOut();
+                }
               }
               if(nombre==""){
                 $("#itNombre").css("border-color","red");
@@ -116,6 +149,7 @@
           $("#itCorreo").change(function(){
             $("#itCorreo").css("border-color","#ced4da");
             $("#mensajeCorreo").fadeOut();
+            $("#mensajeCorreo2").fadeOut();
           })
           $("#itNombre").change(function(){
             $("#itNombre").css("border-color","#ced4da");
