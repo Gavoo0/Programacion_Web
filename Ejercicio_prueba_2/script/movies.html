@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <div id="peli"></div>
+    <script>
+        const settings = {
+            async: true,
+            crossDomain: true,
+            url: 'https://imdb-top-100-movies.p.rapidapi.com/',
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '828456b888mshc3c077fbfa3135ep13d105jsn8785f7f76114',
+                'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+            }
+        };
+        
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            console.log(response[12].title)
+            $.each(response,function(i,item){
+                $("#peli").append("<h1>"+item.rank+"-"+item.title+"</h1>")
+            })
+        });
+        
+    </script>
+</body>
+</html>

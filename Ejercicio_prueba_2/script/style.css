@@ -32,3 +32,28 @@ body{
 a{
     color: white !important;
 }
+
+#mensajeCorreo{
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+}
+#mensajeAsunto{
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+}
+#mensajeApellido{
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+}
+#mensajeNombre{
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+}
