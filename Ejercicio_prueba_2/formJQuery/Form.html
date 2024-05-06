@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+    <h1>Logeate po loco</h1>
+    <br>
+    <br>
+    <br>
+    
+        <form id="loginForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="Apellidos">Apellidos</label>
+                  <input type="text" class="form-control" id="Apellidos" name="apellidos">
+                </div>
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="contraseña">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Ciudad">Ciudad</label>
+                <input type="text" class="form-control" id="Ciudad" name="ciudad">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Pais">Pais</label>
+                <input type="text" class="form-control" id="Pais" name="pais">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Recuerdame
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+          </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#loginForm').submit(function(event){
+                var nombre = $('#nombre').val();
+                var apellidos = $('#Apellidos').val();
+                var email = $('#email').val();
+                var contraseña = $('#password').val();
+                var ciudad = $('#Ciudad').val();
+                var pais = $('#Pais').val();
+
+                // Verificar que ningún campo esté vacío
+                if(nombre == '' || apellidos == '' || email == '' || contraseña == '' || ciudad == '' || pais == ''){
+                    alert('Por favor, completa todos los campos.');
+                    event.preventDefault(); // Evita que se envíe el formulario
+                }
+
+                // Verificar el formato de correo electrónico
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!emailRegex.test(email)){
+                    alert('Por favor, introduce un correo electrónico válido.');
+                    event.preventDefault(); // Evita que se envíe el formulario
+                }
+            });
+        });
+    </script>
+</body>
+</html>
